@@ -37,7 +37,7 @@ let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
             const address = document.getElementById('address').value.trim();
 
             if (!name || !phone || !email) {
-                alert('Please fill in all required fields (Name, Phone, Email)');
+                msg('Please fill in all required fields (Name, Phone, Email)');
                 return;
             }
 
