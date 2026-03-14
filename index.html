@@ -1,55 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Management System</title>
-    <link rel="stylesheet" href="cs/style.css">
-</head>
-<body>
-    <div class="container">
-        <h1> Contact Management System</h1>
+<DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Contact Management System</title>
+      <link rel="stylesheet" href="cs/style.css" />
+    </head>
+    <body>
+      <div class="container">
+        <h1>Contact Management System</h1>
 
         <!-- Add Contact Form -->
         <div class="form-group">
-            <label for="name">Full Name:</label>
-            <input type="text"  id="name" placeholder="Enter full name" name="userName" required>
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" placeholder="Enter full name" />
         </div>
 
         <div class="form-group">
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" placeholder="Enter phone number" name="userPhone" required>
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" placeholder="Enter phone number" />
         </div>
 
         <div class="form-group">
-            <label for="email">Email Address:</label>
-            <input type="email"  id="email" placeholder="Enter email address" name="useremail" required>
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" placeholder="Enter email address" />
         </div>
 
         <div class="form-group">
-            <label for="address">Address:</label>
-            <textarea id="address" placeholder="Enter address" required></textarea>
+          <label for="address">Address:</label>
+          <textarea id="address" placeholder="Enter your address"></textarea>
         </div>
 
         <div class="button-group">
-            <button class="btn-add" onclick="addContact()">Add Contact</button>
-            <button class="btn-clear" onclick="clearForm()">Clear</button>
+          <button class="btn-add" onclick="addContact()">Add Contact</button>
+          <button class="btn-clear" onclick="clearForm()">Clear</button>
         </div>
 
         <!-- Search Contacts -->
         <div class="search-group">
-          
-
-            <input class="demo" type="text" id="search" placeholder="Search contacts by name..." onkeyup="searchContacts()">  
+          <input
+            type="text"
+            id="search"
+            placeholder="🔍 Search contacts by name..."
+            onkeyup="searchContacts()"
+          />
         </div>
 
         <!-- Contacts List -->
         <div class="contacts-list">
-            <h2>Contacts (<span id="contactCount">0</span>)</h2>
-            <div id="contactsContainer"></div>
+          <h2>Contacts (<span id="contactCount">0</span>)</h2>
+          <div id="contactsContainer"></div>
         </div>
-    </div>
+      </div>
 
-    <script src="js/main.js"></script>
-</body>
-</html>
+      <script src="js/main.js"></script>
+    </body>
+  </html>
+</DOCTYPE>

@@ -35,18 +35,9 @@ let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
             const phone = document.getElementById('phone').value.trim();
             const email = document.getElementById('email').value.trim();
             const address = document.getElementById('address').value.trim();
-            if (!email.includes('@')) {
-                msg("Please enter a valide eamil address")
-                return false;
-            }
-            if (!name.trim() === "" ) {
-                msg("Please enter a valide name")
-                return false;
-            }
-            if (!phone)
 
             if (!name || !phone || !email) {
-                msg('Please fill in all required fields (Name, Phone, Email)');
+                document.write('Please fill in all required fields (Name, Phone, Email)');
                 return;
             }
 
@@ -104,3 +95,6 @@ let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
 
         // Initial display
         displayContacts();
+
+
+
