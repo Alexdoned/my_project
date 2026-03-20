@@ -35,10 +35,29 @@ let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
             const phone = document.getElementById('phone').value.trim();
             const email = document.getElementById('email').value.trim();
             const address = document.getElementById('address').value.trim();
+            // Basic validation: ensure all fields are filled
+            if ([name, phone, email, address].some(field => !field)) {
+                function showmessage () {
+                    document.getElementById('contactsContainer');
+                    
+                    
 
-            if (!name || !phone || !email) {
-                document.write('Please fill in all required fields (Name, Phone, Email)');
+                }
                 return;
+                
+               
+            }
+
+            function Validate() {
+                const email = document.getElementById('email').value.trim();
+                const regex = /^([a-z A-Z \. _]+)@([a-z A-Z]+).([a-z A-Z]{2,6})/;
+                if (email.trim() == "") {
+                    document.write ('Please enter a valide email address!');
+                } else if ((regex.test(email))){
+                    document.write ('Email summited succesful')
+                } else {
+                    document.write ('Wrong email.address');
+                }
             }
 
             const contact = { name, phone, email, address };
