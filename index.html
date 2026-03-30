@@ -10,6 +10,7 @@
     <form action="">
       <div class="container">
         <h1>Contact Management System</h1>
+        <div id="message"></div>
 
         <!-- Add Contact Form -->
         <div class="form-group">
@@ -25,7 +26,7 @@
         <div class="form-group">
           <label for="phone">Phone Number:</label>
           <input
-            type="number"
+            type="text"
             id="phone"
             placeholder="Enter phone number"
             required
@@ -52,8 +53,8 @@
         </div>
 
         <div class="button-group">
-          <button class="btn-add" onclick="addContact()">Add Contact</button>
-          <button class="btn-clear" onclick="clearForm()">Clear</button>
+          <button type="button" class="btn-add" onclick="addContact()">Add Contact</button>
+          <button type="button" class="btn-clear" onclick="clearForm()">Clear</button>
         </div>
 
         <!-- Search Contacts -->

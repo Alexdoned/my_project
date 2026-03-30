@@ -31,33 +31,32 @@ let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
 
         // Add or Update Contact
         function addContact() {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = ''; // Clear previous messages
+
             const name = document.getElementById('name').value.trim();
             const phone = document.getElementById('phone').value.trim();
             const email = document.getElementById('email').value.trim();
             const address = document.getElementById('address').value.trim();
-            // Basic validation: ensure all fields are filled
-            if ([name, phone, email, address].some(field => !field)) {
-                function showmessage () {
-                    document.getElementById('contactsContainer');
-                    
-                    
 
-                }
+            // Basic validation: ensure all fields are filled
+            if (!name || !phone || !email || !address) {
+                messageDiv.textContent = 'Please fill in all fields.';
                 return;
-                
-               
             }
 
-            function Validate() {
-                const email = document.getElementById('email').value.trim();
-                const regex = /^([a-z A-Z \. _]+)@([a-z A-Z]+).([a-z A-Z]{2,6})/;
-                if (email.trim() == "") {
-                    document.write ('Please enter a valide email address!');
-                } else if ((regex.test(email))){
-                    document.write ('Email summited succesful')
-                } else {
-                    document.write ('Wrong email.address');
-                }
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                messageDiv.textContent = 'Please enter a valid email address.';
+                return;
+            }
+
+            // Validate phone: at least 10 digits after removing non-digits
+            const phoneDigits = phone.replace(/\D/g, '');
+            if (phoneDigits.length < 10 || phoneDigits.length > 15) {
+                messageDiv.textContent = 'Please enter a valid phone number (10-15 digits).';
+                return;
             }
 
             const contact = { name, phone, email, address };
